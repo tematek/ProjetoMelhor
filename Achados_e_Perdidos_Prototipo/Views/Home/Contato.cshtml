@@ -1,0 +1,72 @@
+﻿@model Achados_e_Perdidos_Prototipo.Models.ContactModel
+
+@{
+    ViewBag.Title = "Cadastro";
+}
+
+<link href="~/Content/paginastilo.css" rel="stylesheet" />
+
+
+<section class="promo section offset-header">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-md-offset-4">
+                @*<h1 class="text-center login-title">Sign in to continue to Bootsnipp</h1>*@
+                <div class="account-wall">
+                    <img class="profile-img"<img src="~/Scripts/images/send2.png" />
+
+
+                    <form class="form-signin" action="ValidaEnvioCantato" method="POST">
+
+                        <label class="CorLabel" for="nome"></label>
+                        <input type="text" value="@Model.Nome" id="Nome" name="Nome" class="form-control" placeholder="digite seu nome" required autofocus>
+
+                        <label class="CorLabel" for="nome"></label>
+                        <input type="text" value="@Model.Email" id="Email" name="Email" class="form-control" placeholder="digite seu Email" required>
+
+                        <label class="CorLabel" for="nome"></label>
+                        <input type="text" value="@Model.Assunto" id="Assunto" name="Assunto" class="form-control" placeholder="digite um Assunto" required>
+
+                        <label class="CorLabel" for="nome"></label>
+                        <textarea value="@Model.Msg" id="Msg" name="Msg" class="form-control" placeholder="Escreva sua mensagem" required /></textarea>
+
+                        <span role="alert" class="error-msg" id="errormsg_0_Passwd">
+                            @Model.Resultado
+                        </span>
+
+
+                        <input id="Enviar" class="btn btn-lg btn-primary btn-block" type="submit" value="Enviar E-mail">
+
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>>
+
+    <script>
+        function formatar(mascara, documento) {
+            var i = documento.value.length;
+            var saida = mascara.substring(0, 1);
+            var texto = mascara.substring(i)
+
+            if (texto.substring(0, 1) != saida) {
+                documento.value += texto.substring(0, 1);
+            }
+
+        }
+
+        Cadastrar.onclick = function () {
+
+            if (document.getElementById("termo").checked == false) {
+                alert('Por favor, Leia os termos de uso e se estiver de acordo, marque a opção.');
+                document.getElementById("termo").focus();
+                return false;
+            }
+        };
+
+    </script>
+
+</section>

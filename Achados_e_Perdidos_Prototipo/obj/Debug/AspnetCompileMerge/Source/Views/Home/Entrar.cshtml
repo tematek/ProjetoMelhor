@@ -1,0 +1,45 @@
+﻿@model Achados_e_Perdidos_Prototipo.Models.Login
+
+
+@{
+    ViewBag.Title = "AchadosPerdidos";
+    
+}
+
+<link href="~/Content/paginastilo.css" rel="stylesheet" />
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-md-offset-4">
+                @*<h1 class="text-center login-title">Sign in to continue to Bootsnipp</h1>*@
+                <div class="account-wall">
+                    <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                         alt="">
+
+                    <form class="form-signin" action="ValidaLogon" method="POST">
+
+
+                        <input type="text" value="@Model.Email" id="EmailID" name="EmailID" class="form-control" placeholder="usuário" required autofocus>
+
+                        <input type="password" value="@Model.Senha" id="SenhaID" name="SenhaID" class="form-control" placeholder="senha" required>
+
+                        <span role="alert" class="error-msg" id="errormsg_0_Passwd">
+                            @Model.Result 
+                        </span>
+
+                        <input class="btn btn-lg btn-primary btn-block" type="submit" value="Entrar">
+
+                        <label class="checkbox pull-left">
+                            <input type="checkbox" value="remember-me">
+                            Lembrar-me
+                        </label>
+                        <a href="#" class="pull-right need-help">Ajuda? </a><span class="clearfix"></span>
+                    </form>
+                </div>
+                <a href="#" class="text-center new-account">Criar uma conta </a>
+            </div>
+        </div>
+    </div>>
+    <link href="~/Content/paginastilo.css" rel="stylesheet" />
+

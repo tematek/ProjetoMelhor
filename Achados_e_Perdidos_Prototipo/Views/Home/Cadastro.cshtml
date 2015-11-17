@@ -1,0 +1,84 @@
+﻿@model Achados_e_Perdidos_Prototipo.Models.CamposCadastro
+
+@{
+    ViewBag.Title = "Cadastro";
+}
+
+<link href="~/Content/paginastilo.css" rel="stylesheet" />
+
+
+<section class="promo section offset-header">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-md-offset-4">
+                @*<h1 class="text-center login-title">Sign in to continue to Bootsnipp</h1>*@
+                <div class="account-wall">
+                    <img class="profile-img"<img src="~/Scripts/images/cadastro5.png" />
+
+
+                    <form class="form-signin" action="ValidaCadastro" method="POST">
+
+                        <input type="text" value="@Model.NomeCadastro" id="Nome" name="Nome" class="form-control" placeholder="Nome" required autofocus>
+
+                        <label class="CorLabel" for="nome"></label>
+                        <input type="text" value="@Model.SobreNomeCadastro" id="SobreNome" name="SobreNome" class="form-control" placeholder="Sobrenome" required>
+                        <label class="CorLabel" for="nome"></label>
+                        <input type="text" value="@Model.CpfCadastro" id="Cpf" name="Cpf" class="form-control" placeholder="Cpf" required maxlength="14" onkeypress="formatar('###.###.###-##', this)">
+                        <label class="CorLabel" for="nome"></label>
+                        <input type="text" value="@Model.TelCadastro" id="Tel" name="Tel" class="form-control" placeholder="Telefone" required maxlength="13" onkeypress="formatar('##-#####-####', this)">
+                        <label class="CorLabel" for="nome"></label>
+                        <input type="text" value="@Model.CpfCadastro" id="Cel" name="Cel" class="form-control" placeholder="Celular" required maxlength="13" onkeypress="formatar('##-#####-####', this)">
+                        <label class="CorLabel" for="nome"></label>
+                        <input type="text" value="@Model.EmailCadastro" id="Email" name="Email" class="form-control" placeholder="E-mail" required>
+                        <label class="CorLabel" for="nome"></label>
+                        <input type="password" value="@Model.SenhaCadastro" id="Senha" name="Senha" class="form-control" placeholder="Senha" required>
+                        <label class="CorLabel" for="nome"></label>
+                        <input type="password" value="@Model.ConfirmCadastro" id="ConfirmSenha" name="ConfirmSenha" class="form-control" placeholder="Confirmar senha" required>
+
+                        <span role="alert" class="error-msg" id="errormsg_0_Passwd">
+                            @Model.ResultadoCadastro
+                        </span>
+
+                        <input id="Cadastrar" class="btn btn-lg btn-primary btn-block" type="submit" value="Cadastrar">
+
+                        <label class="checkbox pull-left">
+                            <input type="checkbox" id="termo" value="termos"><a class="pull-left">Li e aceito</a>
+                        </label>
+
+                        <a href="Termo" class="pull-right need-help">Termos de uso</a><span class="clearfix"></span>
+
+                    </form>
+                </div>
+
+
+                @*<a class="text-center new-account">@Html.ActionLink("Termos de uso", "Termo", "Home") </a>*@
+
+            </div>
+        </div>
+    </div>>
+
+    <script>
+        function formatar(mascara, documento) {
+            var i = documento.value.length;
+            var saida = mascara.substring(0, 1);
+            var texto = mascara.substring(i)
+
+            if (texto.substring(0, 1) != saida) {
+                documento.value += texto.substring(0, 1);
+            }
+
+        }
+
+        Cadastrar.onclick = function () {
+
+            if (document.getElementById("termo").checked == false) {
+                alert('Por favor, Leia os termos de uso e se estiver de acordo, marque a opção.');
+                document.getElementById("termo").focus();
+                return false;
+            }
+        };
+
+    </script>
+
+</section>

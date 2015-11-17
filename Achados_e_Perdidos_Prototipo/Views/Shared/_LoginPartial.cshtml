@@ -1,0 +1,22 @@
+﻿@*using Microsoft.AspNet.Identity*@
+@if (Request.IsAuthenticated)
+{
+
+    @Html.AntiForgeryToken()
+
+    <ul class="nav navbar-nav navbar-right">
+
+        <li>@Html.ActionLink("Logoff", "Deslogar", "Home", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+
+    </ul>
+    
+}
+else
+{
+    
+    <ul class="nav navbar-nav navbar-right">
+    
+        <li>@Html.ActionLink("Log in", "Entrar", "Home", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+
+}

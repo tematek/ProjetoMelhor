@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+<body data-spy="scroll">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> 
+    <link href="~/Content/paginastilo.css" rel="stylesheet" />
+
+    <link href="~/Scripts/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Scripts/plugins/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <script src="~/Scripts/plugins/bootstrap/js/bootstrap.js"></script>
+    <link href="~/Scripts/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Scripts/plugins/prism/prism.css" rel="stylesheet" />
+    <link href="~/Scripts/css/styles.css" rel="stylesheet" />
+    <link href="~/Scripts/plugins/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <!---//Facebook button code-->
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+
+    @*<nav class="navbar navbar-inverse">*@
+    <header class="header">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+        <div class="container">
+
+            @*<li class="nav-item">*@
+
+
+                <h1 class="logo pull-left">
+                    <a class="scrollto" @Html.ActionLink("AchadosPerdidos", "Index", "Home")
+                        <span class="logo-title"</span>
+                    </a>
+                </h1><!--//logo-->
+
+           @* </li>*@
+
+            <nav id="main-nav" class="main-nav navbar-right" role="navigation">
+                <div class="navbar-collapse collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item"><a class="scrollto" @Html.ActionLink("Encontrei", "Encontrei", "Home")</a></li>
+                        <li class="nav-item"><a class="scrollto" @Html.ActionLink("Perdi", "Perdi", "Home")</a></li>
+                        <li class="nav-item"><a class="scrollto" @Html.ActionLink("Sobre", "Sobre", "Home")</a></li>
+                        <li class="nav-item"><a class="scrollto" @Html.ActionLink("Destaques", "Destaques", "Home")</a></li>
+                        <li class="nav-item"><a class="scrollto" @Html.ActionLink("Parcerias", "Parcerias", "Home")</a></li>
+                        <li class="nav-item"><a class="scrollto" @Html.ActionLink("Contribua", "Contribua", "Home")</a></li>
+                        <li class="nav-item"><a class="scrollto" @Html.ActionLink("Entrar", "Entrar", "Home")</a></li>
+                        <li class="nav-item"><a class="scrollto" @Html.ActionLink("Contato", "Contato", "Home")</a></li>
+                        @*<li class="dropdown nav-item">
+                            <a class="dropdown-toggle" href="#" data-toggle="dropdown">Entrar<strong class="caret"></strong></a>
+                            <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+                                <form method="post" action="login" accept-charset="UTF-8">
+                                    <input style="margin-bottom: 15px; color: black;" type="text" placeholder="Username" id="username" name="username">
+                                    <input style="margin-bottom: 15px; color: black;" type="password" placeholder="Password" id="password" name="password">
+                                    <input style="float: left; margin-right: 10px;" type="checkbox" name="remember-me" id="remember-me" value="1">
+                                    <label class="string optional" for="user_remember_me"> Remember me</label>
+                                    <input class="btn btn-primary btn-block" type="submit" id="sign-in" value="Sign In">
+                                    <label style="text-align:center;margin-top:5px">or</label>
+                                    <input class="btn btn-primary btn-block" type="button" id="sign-in-google" value="Sign In with Google">
+                                    <input class="btn btn-primary btn-block" type="button" id="sign-in-twitter" value="Sign In with Twitter">
+                                </form>
+                            </div>
+
+                        </li>*@
+
+
+                        
+
+                    </ul><!--//nav-->
+                </div><!--//navabr-collapse-->
+            </nav><!--//main-nav-->
+        </div>
+
+  
+
+    </header>
+
+    @*</nav>*@
+
+
+
+
+
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+
+    <footer class="footer">
+
+            <div class="info text-center">
+                <ul class="social-icons list-inline"> 
+                    <li><a href="https://twitter.com/3rdwave_themes" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://www.facebook.com/3rdwavethemes" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/xiaoying"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="http://instagram.com/xyriley"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="https://dribbble.com/Xiaoying"><i class="fa fa-dribbble"></i></a></li>
+                    <li class="last"><a href="mailto: hello@3rdwavemedia.com"><i class="fa fa-envelope"></i></a></li>
+                </ul>
+            </div>
+    </footer>
+
+    <!-- Javascript -->
+    @*<script type="text/javascript" src="~/Scripts/plugins/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/plugins/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/plugins/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="~/Scripts/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/plugins/prism/prism.js"></script>
+    <script type="text/javascript" src="~/Scripts/js/main.js"></script>*@
+    
+</body>
+
+
+
+
+</html>
